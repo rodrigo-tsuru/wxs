@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+<head>
+<!-- Licensed Materials Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+
+<style type="text/css">
+body { font-family: Arial, sans-serif; font-size: 0.8em; background-color: #ffffff;  color: Black; margin-right: 5em; margin-bottom: 1em; }
+.filepath { font-family: "Courier New", Courier, monospace; font-size: 100%; }
+var { font-style: italic; }
+pre { 
+font-size: 1.2em; 
+background-color: #dadada; 
+padding: 5px;
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.note,.menucascade,.uicontrol { font-weight:bold; }
+.userinput { font-family: "Courier New", Courier, monospace; font-size: 100%; }
+caption,span.figcap {text-align: left; font-style: italic;}
+TABLE {    margin-top: 0.5em; margin-bottom: 0.5em; margin-left: 0em; margin-right: 0em;} 
+TH { font-weight: bold; background-color: #dadada; padding-top: 0.1em;padding-bottom: 0.3em; padding-left: 1em; padding-right: 1em;} 
+TD { padding-top: 0.1em; padding-bottom: 0.3em; padding-left: 1em; padding-right: 1em;}  
+
+</style>
+<link rel="stylesheet" type="text/css" href="readmefiles/banner.css"/>
+<title>WebSphere eXtreme Scale Getting Started with WebSphere Application Server sample readme</title>
+</head>
+<body id="sampletask"><a name="sampletask"><!-- --></a>
+<div id="ibm-banner">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr valign="middle">
+<td height="35" id="ibm-banner-main">
+<span class="ibm-banner-product-name">IBM WebSphere eXtreme Scale</span>
+<div id="ibm-banner-content">
+<span id="ibm-banner-welcome"></span>
+</div>
+</td>
+<td id="ibm-banner-logo" width="49"><img src="readmefiles/img/ibm-logo-white.gif" width="41" height="15" alt="IBM logo"/></td>
+</tr>
+</table>
+</div>
+
+<h1>WebSphere eXtreme Scale<br></br>Getting Started with WebSphere Application Server sample readme</h1>
+<p>The getting started samples are provided for a quick introduction to
+eXtreme Scale functionality and basic operation in a WebSphere Application
+Server environment.</p>
+
+<p>The samples consist of servlet based server-side application, including source,
+provided to start a simple grid. In addition, a client servlet application, 
+including source, is provided to run simple create, read, update, and delete (CRUD) 
+functions to this basic grid.  The client application can also be used to run
+simple create, read, update and delete functions to a simple grid hosted on 
+a WebSphere DataPower XC10 appliance.</p>
+
+<h2>Table of contents</h2>
+<ul>
+<li><a href="#requirements">Software Requirements</a></li>
+<li><a href="#installing">Installing the sample</a></li>
+<li><a href="#running">Running the sample</a>
+<ul>
+<li><a href="#runserver">Running the server application</a></li>
+<li><a href="#runclient">Running the client application</a></li>
+</ul>
+</li>
+<li><a href="#domain">Using Domain IDs to connect</a></li>
+<li><a href="#import">Importing the samples into Rational Application Developer</a></li>
+<li><a href="#moreinfo">More information </a></li>
+</ul>
+
+<a name="requirements"/>
+<h2>Software requirements</h2>
+<ul><li><a href="http://www-01.ibm.com/software/webservers/appserv/extremescale/" target="_blank">WebSphere eXtreme Scale</a> Version 8.5 or later</li>
+<li><a href="http://www-01.ibm.com/software/webservers/appserv/was/" target="_blank">WebSphere Application Server</a> Version 7 or later</li>
+<li><a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigor" target="_blank">Eclipse IDE for Java EE Developers</a>, Indigo or later with the <a href="http://publib.boulder.ibm.com/infocenter/radhelp/v8r5/index.jsp?topic=%2Fcom.ibm.rad.install.doc%2Ftopics%2Ft_install_wdt.html" target="_blank">WebSphere Application Server Developer Tools</a> or <a href="http://www-01.ibm.com/software/awdtools/developer/application/index.html" target="_blank">Rational Application Developer IDE</a>.</li>
+</ul>
+
+<p>Before installing the sample applications, 
+you  must either perform a full installation of WebSphere eXtreme Scale 
+to use both the client and server sample applications or a WebSphere eXtreme
+Scale client only install to use just the client application. WebSphere eXtreme scale
+must be installed in the same directory which you installed your WebSphere Application 
+Server. You must also perform Profile augmentation for the WebSphere Application Server 
+profiles in order to support eXtreme Scale features.</p>
+
+
+
+<a name="installing"/>
+<h2>Installing the samples in the WebSphere Application Server</h2>
+<p>Use the following basic steps to install the client 
+and server applications into WebSphere Application Server.</p>
+
+<ol class="ol">
+<li>In a browser, log in to the WebSphere Integrated Solution Console.</li>
+
+<li>In the left-hand pane, expand <span class="uicontrol">Applications</span>, and then click <span class="uicontrol">New Application</span>.</li>
+<li>Click <span class="uicontrol">New Enterprise Application</span>.</li>
+<li>Click <span class="uicontrol">Browse</span>, navigate to the directory of the downloaded sample:
+<ol type="a">
+	<li>To install the client, select <span class="uicontrol">GettingStartedWebClient.ear</span>.</li>
+    <li>Click <span class="uicontrol">Open</span>.</li>
+    <li>Click <span class="uicontrol">Next</span>.</li>
+    <li>Select Fast Path, and then click <span class="uicontrol">Next</span>.</li>
+    <li>Accept the default installation options by clicking <span class="uicontrol">Next</span>.</li>
+    <li>Select your application server or cluster and click <span class="uicontrol">Apply</span>, then click <span class="uicontrol">Next</span>.</li>
+    <li>Accept the default virtual hosts for Web modules by clicking <span class="uicontrol">Next</span>.</li>
+    <li>Accept the default metadata for modules by clicking <span class="uicontrol">Next</span>.</li>
+    <li>Verify that the Summary is correct, and then click <span class="uicontrol">Finish</span>.</li>
+    <li>Click <span class="uicontrol">Save</span>.</li>
+</ol>
+</li>
+<li>To install the server component, select <span class="uicontrol">GettingStartedWebServer.ear</span>, repeat steps 2 through 4.</li>
+<li>In the left-hand pane, expand <span class="uicontrol">Application Types</span>, and select <span class="uicontrol">WebSphere enterprise applications</span>.</li> 
+<li>Select the application or applications that you installed in steps 2 through 4, and click <span class="uicontrol">Start</span>.</li>
+<li>Verify that the application or applications have successfully started.</li>
+<li>Log out of the WebSphere Integrated Solution Console.</li>
+</ol>
+
+<a name="running"/>
+<h2>Running the sample</h2>
+
+<a name="runserver"/>
+<h3>Running the server application on WebSphere Application Server</h3>
+<p>The servlet based server application performs no other function than being
+used as a vehicle to deploy a WAR file that contains <span class="filepath">objectGrid.xml</span>, and
+<span class="filepath">objectGridDeployment.xml</span> files. When this application is started, a grid
+container based on the configuration details in the previous <span class="filepath">.xml</span> files will
+start and register with the configured catalog server, or an embedded catalog
+server if one is not configured.</p>
+<p>You can verify the application is running using a browser.</p>
+
+<ol class="ol">
+<li>In a browser, enter the following server servlet URL:
+
+	<span class="userinput">http://<var>hostname</var>:<var>port</var>/GettingStartedWebServer/ServerServlet</span>
+<p>The &lt;<var>hostname</var>&gt; is the host name or IP address of WebSphere Application Server
+and &lt;<var>port</var>&gt; is the web server port for your WebSphere Application Server. See the following server servlet example:</p>
+<pre>http://localhost:9080/GettingStartedWebServer/ServerServlet</pre> 
+</li>
+</ol>
+<p>If the application is running, you will see the following message:</p>
+<pre>WebSphere eXtreme Scale Getting Started Sample
+This sample application starts an ObjectGrid container.
+The ObjectGrid container is active.</pre>
+
+<a name="runclient"/>
+<h3>Running the client application on WebSphere Application Server</h3>
+
+<p>The client application servlet is a simple ObjectGrid client that connects
+to a remote or embedded ObjectGrid and performs Create, Read, Update and Delete 
+(CRUD) operations. This client can be used with a WebSphere eXtreme Scale grid or
+a simple grid on a WebSphere DataPower XC10 appliance.</p>
+
+<ol class="ol">
+<li>In a browser, enter the following server servlet URL:
+
+	<span class="userinput">http://<var>hostname</var>:<var>port</var>/GettingStartedWebClient/ClientServlet</span>
+<p>The &lt;<var>hostname</var>&gt; is the host name or IP address of WebSphere Application Server
+and &lt;<var>port</var>&gt; is the web server port for your WebSphere Application Server. See the following server servlet example:</p>
+<pre>http://localhost:9080/GettingStartedWebClient/ClientServlet</pre> 
+</li>
+<li>In the Client Connection section, leave this section blank to use the configured or embedded catalog server, or enter the hostname or IP address and
+   port of the Remote catalog service endpoint in the form of <span class="userinput"><var>hostname</var>:<var>port</var></span>.</li>
+
+<li>After entering the catalog service endpoint, click <span class="uicontrol">Connect</span> to test the connection.
+   If the connection is successful, you will see <span class="userinput">true</span> for Client Connected.</li>
+   <li>Click the radio button <span class="uicontrol">Catalog Service Domain Id</span> to view the domains available to connect through the Catalog Domain Manager.  See the section
+   <a href="#domain">Using Domain IDs to connect to the data grid</a> for more information.</li>
+
+<li>In the <span class="uicontrol">Grid name</span> and <span class="uicontrol">Map name</span> fields, enter the names of the target grid and map. 
+   The default for the Server servlet application provided is <span class="userinput">Grid</span> for the grid name
+   and <span class="userinput">Map1</span> for the map name. If you are using this client with an XC10 appliance, you 
+   must first create a simple grid on the XC10 appliance. Use the name of the simple 
+   grid for both the grid name and the map name.</li>
+
+<li>Enter a string value for <span class="uicontrol">Key</span> and a string value for <span class="uicontrol">Value</span>. Then, select the
+   appropriate CRUD operation; either Insert, Update, Delete, or Get.</li>
+</ol>
+
+<h3>Running the client application on Liberty Profile</h3>
+
+<p>The client application servlet is a simple ObjectGrid client that connects
+to a remote or embedded ObjectGrid and performs Create, Read, Update and Delete 
+(CRUD) operations. This client can be used with a WebSphere eXtreme Scale grid or
+a simple grid on a WebSphere DataPower XC10 appliance. </p>
+
+<p>WebSphere® eXtreme Scale helps you
+                        develop innovative applications by extending
+                            the data caching concept using advanced features in the
+                            creation of new classes of high-performance applications.
+                            These applications allow for scenarios and configurations that
+                            increase operational flexibility.  Application types include
+                            simple data/database, peer to peer, shared, client/server,
+                            real-time data event mining, and ultra-scale data grid. </p>
+                    <p>WebSphere eXtreme Scale for Liberty Profile is a free version of
+                        WebSphere eXtreme Scale that allows developers 
+to test applications and data grids on the WebSphere Application Server 
+Liberty Profile. It is ideal for projects that do not warrant the 
+expense of a priced and supported runtime. WebSphere eXtreme Scale V8.5 
+for Liberty Profile requires the WebSphere Application Server V8.5 Liberty Profile be installed.</p><div> </div>
+
+
+<p>Step 1: Start up the Liberty Profile </p><div style="margin-left: 40px;"><a href="https://www.ibm.com/developerworks/mydeveloperworks/blogs/wasdev/entry/download_wlp ">Download</a> Liberty Profile jar<br />
+<span style="font-weight: bold;">Install</span><br /><i>java -jar wlp-developers-###.jar</i></div><br />
+
+<p>Step 2: Start up eXtreme Scale for Liberty</p><div style="margin-left: 40px;"><a href="https://www14.software.ibm.com/webapp/iwm/web/preLogin.do?source=swg-wsesfdv85">Download</a> the eXtreme Scale for liberty jar<br />
+<span style="font-weight: bold;">Install</span><br /><i>java -jar wxs-wlp_###.jar</i> </div><br />
+
+<p>Running the GettingStarted sample client</p>
+
+    
+<ol class="ol">
+
+    <li>In a command line, navigate to your <span class="userinput">liberty_installation</span>/bin directory.</li>
+    <li>To create a server, run the command server.bat create <var>serverName</var>.<br /><br />
+
+<span class="userinput">server.bat create gettingstarted</span><br /><br />
+</li>
+</li><li>Drop in your GettingStartedWebClient.ear into your <span class="userinput">liberty_installation</span>/usr/<var>serverName</var>/dropins directory.</li><li>You must add the eXtreme Scale web feature, servlets, and jsps to the liberty server's server.xml.<br />in the server.xml:    <br />
+<pre>&lt;!-- Enable features --&gt;<br />
+    &lt;featureManager&gt;<br />
+        &lt;feature&gt;jsp-2.2&lt;/feature&gt;<br />
+        &lt;feature&gt;servlet-3.0&lt;/feature&gt;<br />
+        &lt;feature&gt;eXtremeScale.webapp-1.1&lt;/feature&gt;<br />
+    &lt;/featureManager&gt;<br /></pre>
+
+    <li>To start the server, run the command server.bat start <var>serverName</var>.<br /><br />
+
+<span class="userinput">server.bat start gettingstarted</span><br /><br />
+</li>
+    <li>Open a web browser and enter the URL: <span class="userinput">http://<var>hostname</var>:<var>port</var>/GettingStartedWebClient/ClientServlet</span> <br/><br />
+    The <var>hostname</var> is the host name or IP address of Liberty Profile Server and <var>port</var> is the web server port for your Liberty Profile Server. Check the console.log file in <var>liberty_installation</var>/usr/servers/<var>serverName</var>/logs for the URL where the web application is available. See the following example:<br /><br />
+
+<span class="userinput">http://localhost:9080/GettingStartedWebClient/ClientServlet/</span><br /><br /></li>
+
+<li>In the Client Connection section, leave this section blank to use the configured or embedded catalog server, or enter the hostname or IP address and
+   port of the Remote catalog service endpoint in the form of <span class="userinput"><var>hostname</var>:<var>port</var></span>.</li>
+
+<li>After entering the catalog service endpoint, click <span class="uicontrol">Connect</span> to test the connection.
+   If the connection is successful, you will see <span class="userinput">true</span> for Client Connected.</li>
+   <li>Click the radio button <span class="uicontrol">Catalog Service Domain Id</span> to view the domains available to connect through the Catalog Domain Manager.  See the section
+   <a href="#domain">Using Domain IDs to connect to the data grid</a> for more information.</li>
+
+<li>In the <span class="uicontrol">Grid name</span> and <span class="uicontrol">Map name</span> fields, enter the names of the target grid and map. 
+   The default for the Server servlet application provided is <span class="userinput">Grid</span> for the grid name
+   and <span class="userinput">Map1</span> for the map name. If you are using this client with an XC10 appliance, you 
+   must first create a simple grid on the XC10 appliance. Use the name of the simple 
+   grid for both the grid name and the map name.</li>
+
+<li>Enter a string value for <span class="uicontrol">Key</span> and a string value for <span class="uicontrol">Value</span>. Then, select the
+   appropriate CRUD operation; either Insert, Update, Delete, or Get.</li>
+</ol>
+
+<a name="domain" />
+<h2>Using Domain IDs to connect to the data grid</h2>
+
+<p>In WebSphere eXtreme Scale Version 8.5, you can define a catalog service domain in WebSphere Application Server and programmatically connect it to the grid with the catalog domain manager.  Use the following sample code to connect to the data grid if you know the Domain ID of your catalog service domain:</p>
+
+<pre>
+ObjectGridManager ogm = ObjectGridManagerFactory.getObjectGridManager();<br />
+CatalogDomainManager cdm = ogm.getCatalogDomainManager();<br />
+String endpoints = cdm.getDomainInfo(domainId).getClientCatalogServerEndpoints();<br />
+ClientClusterContext ccc = ogm.connect(cep, null, null);
+</pre>
+
+<p>If you do not know the catalog server domain ID in WebSphere Application Server, then you must define one.  To define a catalog service domain, complete the following steps:</p>
+
+<ol>
+<li>In a browser, log in to the WebSphere Application Server administrative console.</li>
+<li>In the left navigation, expand <span class="menucascade">System administration &gt; WebSphere eXtreme Scale</span>.</li>
+<li>Click <span class="uicontrol">Catalog service domains</span>, and then click <span class="uicontrol">New...</span>.</li>
+<li>Enter an ID name in the <span class="uicontrol">Name</span> field under General Properties. This name is your domain ID.</li>
+<li>Select a radio button for either an <span class="uicontrol">Existing application server</span> or <span class="uicontrol">Remote server</span>.
+<li>Enter a value for <span class="uicontrol">Catalog server endpoint</span> with the <span class="uicontrol">Client</span>, or enter a value for <span class="uicontrol">Listener port</span> under Catalog Servers</span>.  
+For more information, see <a href="http://pic.dhe.ibm.com/infocenter/wxsinfo/v8r5/topic/com.ibm.websphere.extremescale.doc/common/txscsdomain.html" target="_blank">Catalog service domains</a> in the WebSphere eXtreme Scale Information Center.</li>
+<li>Click <span class="uicontrol">OK</span>.</li>
+</ol>
+
+<a name="import"/>
+<h2>Importing the samples into Rational Application Developer</h2>
+<p>The provided project has been tested with Rational Application Developer 7.5.5.3
+and later. The following steps guide you through the setup of your eXtreme Scale development
+environment for applications deployed to a WebSphere Application Server.</p>
+<ol>
+<li>Open Rational Application Developer to a new or existing workspace.
+<p><strong>Import the client project</strong></p></li>
+<li>From the File menu, select <span class="uicontrol">Import...</span></li>
+<li>Expand the Java EE folder, select <span class="uicontrol">EAR file</span>, and click <span class="uicontrol">Next</span>.</li>
+<li>Browse to the directory of the downloaded sample, select <span class="uicontrol">GettingStartWebClient.ear</span>,
+   and then click <span class="uicontrol">Open</span>. Select the appropriate target runtime environment, and click <span class="uicontrol">Finish</span>.
+<p>You should now see the "client" project in your workspace. If your target runtime environment has 
+WebSphere eXtreme Scale installed, you should not see build errors. However, if there are
+build errors, then you must resolve them by adding the eXtreme Scale JAR files to the Build Path,
+as described in the following steps:</p>
+</li>
+
+<li>Right-click the <span class="uicontrol">GettingStartedWebClient</span> project, and select <span class="menucascade">Build Path &gt; Configure
+   Build Path</span>.</li>
+<li>Click the Libraries tab, and then click <span class="uicontrol">Add External JARS...</span>.</li>
+<li>Navigate to the <span class="filepath">&lt;<var>install_root</var>&gt;/lib</span>, and select <span class="uicontrol">wsogclient.jar</span>. Click <span class="uicontrol">Open</span> and <span class="uicontrol">OK</span>.
+<p>The correct classes and libraries are now in the build path, and the project should be error free.</p>
+<p><strong>Import the Server project</strong></p></li>
+<li>From the File menu, select <span class="uicontrol">Import...</span>.</li>
+<li>Expand the Java EE folder, select <span class="uicontrol">EAR file</span>, and click <span class="uicontrol">Next</span>.</li>
+<li>Browse to the directory of the downloaded sample, select <span class="uicontrol">GettingStartWebServerEAR.ear</span>, and click <span class="uicontrol">Open</span>. Select the appropriate target runtime environment, and click <span class="uicontrol">Finish</span>.
+<p>You should now see the "server" project in your workspace. If your target runtime environment has 
+WebSphere eXtreme Scale installed, you should not see build errors. However, if there are
+build errors,you must resolve them by adding the eXtreme Scale JAR files to the Build Path,
+as described in the following steps:</p></li>
+<li>Right-click the <span class="uicontrol">GettingStartedWebServer</span> project. Then select <span class="menucascade">Build Path > Configure
+   Build Path</span>.</li>
+<li>Click the Libraries tab. Then click <span class="uicontrol">Add External JARS...</span>.</li>
+<li>Navigate to the <span class="filepath">&lt;<var>install_root</var>&gt;/lib</span>, and select <span class="filepath">wsobjectgrid.jar</span>. Click <span class="uicontrol">Open</span> and <span class="uicontrol">OK</span>.
+<p>The correct classes and libraries are now in the build path, and the project should be error free.</p></li>
+</ol>
+
+<a name="moreinfo" />
+<h2>More information</h2>
+<ul><li>For help and support, see the <a href="http://www.ibm.com/developerworks/forums/forum.jspa?forumID=778" target="_blank">WebSphere eXtreme Scale forum</a>.</li>
+<li>For the latest information, samples, hints, tips, and troubleshooting
+information, see the <a href="http://www.ibm.com/developerworks/wikis/display/extremescale" target="_blank">WebSphere eXtreme Scale community Wiki</a>.</li>
+<li>Use the following links for additional information about WebSphere
+eXtreme Scale:
+<ul><li><a href="http://publib.boulder.ibm.com/infocenter/wxsinfo/v8r5/index.jsp" target="_blank">WebSphere eXtreme Scale Version 8.5 Information Center</a></li>
+<li><a href=" http://www.ibm.com/developerworks/wikis/x/OgWoBg" target="_blank">WebSphere eXtreme Scale API documentation</a></li>
+<li> <a href=" http://www-306.ibm.com/software/webservers/appserv/extremescale/" target="_blank">Product details and system requirements</a>  </li>
+</ul>
+</li>
+</ul>
+
+
+
+</body>
+</html>
